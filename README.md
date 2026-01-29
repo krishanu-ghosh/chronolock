@@ -97,47 +97,34 @@ Run the tool as a normal user (no `sudo` needed for reading):
 ./chronolock
 ```
 #### 🔐 Phase 1: The Time-Password
-
-The tool will prompt:
-
-Pass:
-You must calculate this mentally using the following format:
-
-[BasePassword][Day][MonthInitial][HHMM]
-Components
-
-BasePassword: Defined during setup (e.g., MySecret)
-
-Day: Current day of the month (e.g., 29)
-MonthInitial: First letter of the month, lowercase (e.g., January → j)
-HHMM: Current 24-hour time (e.g., 5:45 PM → 1745)
-Example
-BasePassword: MySecret
-Date: Jan 29th, 5:45 PM
-MySecret29j1745
-⏱️ The tool allows a ±1 minute drift window.
+The tool will prompt:  
+Pass:  
+You must calculate this mentally using the format: [BasePassword][Day][MonthInitial][HHMM]
+BasePassword: Defined during setup (e.g., MySecret).  
+Day: Current day of the month (e.g., 29).  
+MonthInitial: First letter of the month, lowercase (e.g., January → j).  
+HHMM: Current 24-hour time (e.g., 5:45 PM → 1745).  
+Example:  
+Base: MySecret  
+Time: Jan 29th, 5:45 PM  
+Input: MySecret29j1745  
+(⏱️ The tool allows a ±1 minute drift window.)
 
 #### 🔑 Phase 2: The Session Handshake
-If the password is correct:
-
-A random Session Hex (e.g., a1b2c3d4) is generated
-It is automatically copied to your clipboard
-You will see the prompt:
+If the password is correct, a random Session Hex (e.g., a1b2c3d4) is generated and automatically copied to your clipboard.  
+The tool will prompt:  
 Secret:
-
-Action
-Press Ctrl + V to paste the session hex into the terminal, input the daily secret (day initial + date)
-
-For example for 29 January 2026, Thursday, the secret would be:
-[sessionHex+t29+sessionHex]
-
-Press Enter
+You must authenticate by constructing the "Handshake Sandwich": Format: [SessionHex] + [DayOfWeekInitial][Date] + [SessionHex]  
+Action:  
+Paste (Ctrl+V) the Session Hex.
+Type the Day Code (Day of Week Initial + Date).
+Example: Thursday 29th → t29.
+Paste (Ctrl+V) the Session Hex again.
+Press Enter.  
+Example (for Thursday, Jan 29th): If your Hex is a1b2c3d4, you enter: a1b2c3d4 + t29 + a1b2c3d4
 
 #### 📋 Phase 3: Selection
-A menu appears listing your saved secrets
-
-Type the number corresponding to the secret you want (e.g., 1)
-
-The selected secret is silently copied to your clipboard
-
+A menu appears listing your saved secrets.  
+Type the number corresponding to the secret you want (e.g., 1).  
+Result: The selected secret is silently copied to your clipboard.  
 Paste it wherever needed.
