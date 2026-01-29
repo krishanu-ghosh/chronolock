@@ -36,7 +36,7 @@ It is designed to thwart **malware scrapers** and **shoulder surfers** by ensuri
 sudo apt update && sudo apt install xsel
 ```
 
-## Download and Use
+## Download and Use (Recommended)
 * Download the [init_keys.sh](https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/init_keys.sh) file.
 * Download the [binary](https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/chronolock)
 * execute this block in the same path
