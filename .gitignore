@@ -1,0 +1,17 @@
+# --- Secrets & Configuration (CRITICAL) ---
+# The encrypted store
+keys.json
+# The plaintext setup file (never commit this)
+data.json
+# The script containing your raw secret data
+init_keys.sh
+
+# --- IDE & Editor ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
