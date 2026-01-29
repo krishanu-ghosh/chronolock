@@ -36,6 +36,27 @@ It is designed to thwart **malware scrapers** and **shoulder surfers** by ensuri
 sudo apt update && sudo apt install xsel
 ```
 
+## Download and Use
+* Download the [init_keys.sh](https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/init_keys.sh) file.
+* Download the [binary](https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/chronolock)
+* execute this block in the same path
+```shell
+chmod +x ./init_keys.sh
+chmod +x ./chronolock.sh
+./init_keys.sh
+```
+* Add your dev secrets in the keys.json file.
+* To set up for the first time use sudo. (running without sudo would work too, but the encrypted data will not be locked)
+````shell
+sudo ./chronolock --setup keys.json
+````
+* Once the setup is done, run as normal user.
+```shell
+./chronolock
+```
+
+
+
 ## Installation (Manual)
 Clone the repository and build the binary.
 
