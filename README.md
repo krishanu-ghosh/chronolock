@@ -108,7 +108,7 @@ Example:
 Base: MySecret  
 Time: Jan 29th, 5:45 PM  
 Input: MySecret29j1745  
-(⏱️ The tool allows a ±1 minute drift window.)
+(⏱️ The tool allows a ±1 minute drift window. Don't you worry being slow as a sloth or you can't mentally figure the pattern out, its realtime.)
 
 #### 🔑 Phase 2: The Session Handshake
 If the password is correct, a random Session Hex (e.g., a1b2c3d4) is generated and automatically copied to your clipboard.  
