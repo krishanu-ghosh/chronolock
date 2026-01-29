@@ -50,11 +50,11 @@ chmod +x ./chronolock.sh
 ````shell
 sudo ./chronolock --setup keys.json
 ````
-* Once the setup is done, run as normal user.
+* Once the setup is done, run as normal user.  
+  [Read this for Chronolock's password patterns.](#-daily-usage)
 ```shell
 ./chronolock
 ```
-
 
 
 ## Installation (Manual)
