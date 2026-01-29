@@ -128,3 +128,31 @@ A menu appears listing your saved secrets.
 Type the number corresponding to the secret you want (e.g., 1).  
 Result: The selected secret is silently copied to your clipboard.  
 Paste it wherever needed.
+
+## What Chronolock Serves
+If an attacker knows your Base Password and the Algorithm (Base + Day + Month + Time), they can trivially generate the correct password because time is public knowledge.  
+In cryptography, this is known as Security by Obscurity, which is generally considered weak.  
+However, in the context of ChronoLock, the threat model is different from a remote server authentication.  
+Here is why it is designed this way and where the actual security lies:
+
+#### 1. The Threat Model: "The Wrench" 🔧  
+ChronoLock is designed to protect against Malware Scrapers and Casual Snooping, not a cryptographer targeting you specifically.  
+Malware: A script running on your PC (e.g., a bad npm package) tries to grab AWS_SECRET from environment variables or config files. It fails because the secret is encrypted. It cannot "guess" to type the password because it doesn't know the format or the base password.  
+Snooping: Someone looking at your screen sees you type a password. Ten minutes later, they try to type the same password. It fails.
+
+
+#### 2. The Real Secret is the "Base Password"  
+The time component is not the secret; it is a Salt.  
+The Secret: Your BasePassword (e.g., "MySecret").  
+The Salt: The Time (e.g., "29j1745").  
+Just like in standard TOTP (Google Authenticator), the security relies entirely on the Secret Key (your Base Password). If someone knows your Base Password, the system is broken regardless of the time component.
+
+#### 3. Why add Time then?
+If the Base Password is the only real secret, why bother with the time?  
+Replay Attack Prevention: If a keylogger records you typing your password at 10:00 AM, that recording is useless at 10:05 AM. The attacker must understand the logic of the password change, not just replay the keystrokes.  
+Human-in-the-Loop: It forces you to be conscious. You cannot hardcode this password into a script easily without writing a logic generator, which defeats the purpose of "quick" malware.  
+
+#### Summary
+Is it cryptographically stronger than a static password? No.  
+Is it operationally annoying for malware? Yes, extremely.  
+If you want higher security, you would replace the "Mental Time Algo" with a standard 2FA HMAC-SHA1 (Google Authenticator) logic, where your phone holds the secret key and generates the code.
