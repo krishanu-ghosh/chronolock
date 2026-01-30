@@ -453,62 +453,62 @@
         <br> Meanwhile you can create that script yourself.
     </p>
 
-    <h2 class="hacker-text" data-value="INSTALLATION_PROTOCOL">INSTALLATION_PROTOCOL</h2>
-    <p>ChronoLock is a Go application. The most secure method is to clone and build from source.</p>
+<!--    <h2 class="hacker-text" data-value="INSTALLATION_PROTOCOL">INSTALLATION_PROTOCOL</h2>-->
+<!--    <p>ChronoLock is a Go application. The most secure method is to clone and build from source.</p>-->
 
-    <div class="terminal-window" id="term-install" onclick="skipType(this)">
-        <div class="terminal-header">
-            <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-            <div style="color: #666; margin-left: auto; font-size: 0.7rem;">bash -- user@linux [CLICK TO SKIP]</div>
-            <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>
-        </div>
-        <div class="terminal-body">
-            <span class="comment"># 1. Install dependencies (Clipboard utility)</span>
-            <div class="cmd-line">
-                <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="sudo apt install xsel"></span>
-            </div>
+<!--    <div class="terminal-window" id="term-install" onclick="skipType(this)">-->
+<!--        <div class="terminal-header">-->
+<!--            <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>-->
+<!--            <div style="color: #666; margin-left: auto; font-size: 0.7rem;">bash &#45;&#45; user@linux [CLICK TO SKIP]</div>-->
+<!--            <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>-->
+<!--        </div>-->
+<!--        <div class="terminal-body">-->
+<!--            <span class="comment"># 1. Install dependencies (Clipboard utility)</span>-->
+<!--            <div class="cmd-line">-->
+<!--                <span class="prompt">$</span>-->
+<!--                <span class="typed-cmd" data-type="sudo apt install xsel"></span>-->
+<!--            </div>-->
 
-            <span class="comment"># 2. Clone the repository</span>
-            <div class="cmd-line">
-                <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="git clone https://github.com/krishanu-ghosh/chronolock.git"></span>
-            </div>
+<!--            <span class="comment"># 2. Clone the repository</span>-->
+<!--            <div class="cmd-line">-->
+<!--                <span class="prompt">$</span>-->
+<!--                <span class="typed-cmd" data-type="git clone https://github.com/krishanu-ghosh/chronolock.git"></span>-->
+<!--            </div>-->
 
-            <span class="comment"># 3. Build the binary</span>
-            <div class="cmd-line">
-                <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="cd chronolock && go build -o chronolock cmd/main.go"></span>
-            </div>
+<!--            <span class="comment"># 3. Build the binary</span>-->
+<!--            <div class="cmd-line">-->
+<!--                <span class="prompt">$</span>-->
+<!--                <span class="typed-cmd" data-type="cd chronolock && go build -o chronolock cmd/main.go"></span>-->
+<!--            </div>-->
 
-            <span class="comment"># 4. Set permissions</span>
-            <div class="cmd-line">
-                <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="chmod +x chronolock init_keys.sh"></span>
-            </div>
-        </div>
-    </div>
+<!--            <span class="comment"># 4. Set permissions</span>-->
+<!--            <div class="cmd-line">-->
+<!--                <span class="prompt">$</span>-->
+<!--                <span class="typed-cmd" data-type="chmod +x chronolock init_keys.sh"></span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <h2 class="hacker-text" data-value="ENCRYPTION_SETUP">ENCRYPTION_SETUP</h2>
-    <p>The setup process initializes a plaintext template, encrypts it in-place using AES-256-GCM, and locks the filesystem node.</p>
+<!--    <h2 class="hacker-text" data-value="ENCRYPTION_SETUP">ENCRYPTION_SETUP</h2>-->
+<!--    <p>The setup process initializes a plaintext template, encrypts it in-place using AES-256-GCM, and locks the filesystem node.</p>-->
 
-    <div class="terminal-window" id="term-setup" onclick="skipType(this)">
-        <div class="terminal-header">
-            <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-            <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>
-        </div>
-        <div class="terminal-body">
-            <span class="comment"># 1. Generate template file</span>
-            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="./init_keys.sh"></span></div>
+<!--    <div class="terminal-window" id="term-setup" onclick="skipType(this)">-->
+<!--        <div class="terminal-header">-->
+<!--            <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>-->
+<!--            <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>-->
+<!--        </div>-->
+<!--        <div class="terminal-body">-->
+<!--            <span class="comment"># 1. Generate template file</span>-->
+<!--            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="./init_keys.sh"></span></div>-->
 
-            <span class="comment"># 2. Edit with your actual secrets</span>
-            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="nano keys.json"></span></div>
+<!--            <span class="comment"># 2. Edit with your actual secrets</span>-->
+<!--            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="nano keys.json"></span></div>-->
 
-            <span class="comment"># 3. ENCRYPT & LOCK (Requires Sudo)</span>
-            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="sudo ./chronolock --setup keys.json"></span></div>
-            <span class="output">> SUCCESS: keys.json is now an immutable vault.</span>
-        </div>
-    </div>
+<!--            <span class="comment"># 3. ENCRYPT & LOCK (Requires Sudo)</span>-->
+<!--            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="sudo ./chronolock &#45;&#45;setup keys.json"></span></div>-->
+<!--            <span class="output">> SUCCESS: keys.json is now an immutable vault.</span>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <h2 class="hacker-text" data-value="DAILY_OPERATIONS">DAILY_OPERATIONS</h2>
     <p>Run the tool as a normal user. The process has three distinct security phases.</p>
@@ -527,9 +527,14 @@
     </div>
 
     <h3>Phase 1: Time-Password Algorithm</h3>
-    <p>You must calculate the password mentally. Format: <code>[BasePassword][Day][MonthInitial][HHMM]</code></p>
+    <p>You must calculate the password mentally.<br> Format: <code>[BasePassword][Day][MonthInitial][HHMM]</code></p>
 
     <div class="algo-box">
+        <p style="width: 100%; margin-top: 0; margin-bottom: 15px; color: #888; font-size: 0.9rem;">
+            If your base-password is <strong style="color: #fff">MySecret</strong> and since the current time is
+            <span id="algo-friendly-date" style="color: var(--accent); font-weight: bold;">LOADING...</span>:
+        </p>
+
         <div class="part">MySecret</div>
         <div class="plus">+</div>
         <div class="part" id="algo-day">--</div>
@@ -545,8 +550,24 @@
     <p>If the password is correct, the tool copies a random <strong>Hex Code</strong> (e.g., <code>a1b2c3d4</code>) to your clipboard.</p>
     <ul>
         <li><strong>Prompt:</strong> <code>Secret:</code></li>
-        <li><strong>Action:</strong> Press <code>Ctrl+V</code> (Paste) back into the terminal and hit Enter.</li>
+        <li><strong>Action:</strong> Press <code>Ctrl+V</code> (Paste) back into the terminal, add [WeekdayInitial][Day], paste it again and hit Enter.</li>
     </ul>
+    <div class="algo-box">
+        <p style="width: 100%; margin-top: 0; margin-bottom: 15px; color: #888; font-size: 0.9rem;">
+            If the Hex Code is <strong style="color: #fff">a1b2c3d4</strong> and today is
+            <span id="handshake-date" style="color: var(--accent); font-weight: bold;">LOADING...</span>:
+        </p>
+
+        <div class="part">a1b2c3d4</div>
+        <div class="plus">+</div>
+        <div class="part" id="handshake-weekday">--</div>
+        <div class="plus">+</div>
+        <div class="part" id="handshake-day">--</div>
+        <div class="plus">+</div>
+        <div class="part">a1b2c3d4</div>
+        <div class="plus">=</div>
+        <strong class="live-result" id="handshake-result">CALCULATING...</strong>
+    </div>
 
     <h3>Phase 3: Selection</h3>
     <p>A menu listing your keys will appear. Type the number of the secret you want. It will be silently copied to your clipboard.</p>
@@ -565,22 +586,22 @@
         <p>The time component is not the secret; it is a <strong>Salt</strong>. Security relies entirely on the Secret Key (your Base Password). If someone knows your Base Password, the system is broken regardless of the time component.</p>
     </div>
 
-    <h2 class="hacker-text" data-value="ADMIN_OVERRIDE">ADMIN_OVERRIDE</h2>
-    <p>Because the file is immutable, standard <code>rm</code> commands will fail. You must unlock the vault to delete it.</p>
+<!--    <h2 class="hacker-text" data-value="ADMIN_OVERRIDE">ADMIN_OVERRIDE</h2>-->
+<!--    <p>Because the file is immutable, standard <code>rm</code> commands will fail. You must unlock the vault to delete it.</p>-->
 
-    <div class="terminal-window" onclick="skipType(this)">
-        <div class="terminal-header">
-            <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-            <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>
-        </div>
-        <div class="terminal-body">
-            <span class="comment"># Unlock (Remove immutable bit)</span>
-            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="sudo ./chronolock --unlock keys.json"></span></div>
+<!--    <div class="terminal-window" onclick="skipType(this)">-->
+<!--        <div class="terminal-header">-->
+<!--            <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>-->
+<!--            <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>-->
+<!--        </div>-->
+<!--        <div class="terminal-body">-->
+<!--            <span class="comment"># Unlock (Remove immutable bit)</span>-->
+<!--            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="sudo ./chronolock &#45;&#45;unlock keys.json"></span></div>-->
 
-            <span class="comment"># Now you can delete</span>
-            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="rm keys.json"></span></div>
-        </div>
-    </div>
+<!--            <span class="comment"># Now you can delete</span>-->
+<!--            <div class="cmd-line"><span class="prompt">$</span><span class="typed-cmd" data-type="rm keys.json"></span></div>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <footer style="margin-top: 100px; text-align: center; color: #444; font-size: 0.8rem; border-top: 1px solid #111; padding-top: 20px;">
         MIT LICENSE // NO WARRANTY // USE AT OWN RISK<br>
@@ -671,22 +692,44 @@
     // --- 4. Live Algorithm Logic ---
     function updateLiveKey() {
         const now = new Date();
+
+        // --- SHARED VARIABLES ---
         const day = now.getDate();
-        const month = now.toLocaleString('en-US', { month: 'narrow' }).toLowerCase()[0];
+        const monthLetter = now.toLocaleString('en-US', { month: 'narrow' }).toLowerCase()[0];
         const hhmm = now.getHours().toString().padStart(2, '0') +
             now.getMinutes().toString().padStart(2, '0');
+        const weekdayInitial = now.toLocaleString('en-US', { weekday: 'narrow' }).toLowerCase();
+        const friendlyFullDate = now.toLocaleString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+        });
 
-        const elDay = document.getElementById('algo-day');
-        const elMonth = document.getElementById('algo-month');
-        const elTime = document.getElementById('algo-time');
-        const elResult = document.getElementById('algo-result');
+        // --- UPDATE PHASE 1 (Time Algorithm) ---
+        const p1Date = document.getElementById('algo-friendly-date');
+        const p1Day = document.getElementById('algo-day');
+        const p1Month = document.getElementById('algo-month');
+        const p1Time = document.getElementById('algo-time');
+        const p1Result = document.getElementById('algo-result');
 
-        if(elDay && elMonth && elTime && elResult) {
-            elDay.innerText = day;
-            elMonth.innerText = month;
-            elTime.innerText = hhmm;
-            elResult.innerText = `MySecret${day}${month}${hhmm}`;
-        }
+        if(p1Date) p1Date.innerText = now.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false });
+        if(p1Day) p1Day.innerText = day;
+        if(p1Month) p1Month.innerText = monthLetter;
+        if(p1Time) p1Time.innerText = hhmm;
+        if(p1Result) p1Result.innerText = `MySecret${day}${monthLetter}${hhmm}`;
+
+        // --- UPDATE PHASE 2 (Hex + Weekday + Day + Hex) ---
+        const p2Date = document.getElementById('handshake-date');
+        const p2Weekday = document.getElementById('handshake-weekday');
+        const p2Day = document.getElementById('handshake-day');
+        const p2Result = document.getElementById('handshake-result');
+
+        if(p2Date) p2Date.innerText = friendlyFullDate;
+        if(p2Weekday) p2Weekday.innerText = weekdayInitial;
+        if(p2Day) p2Day.innerText = day;
+
+        // NEW LOGIC HERE:
+        if(p2Result) p2Result.innerText = `a1b2c3d4${weekdayInitial}${day}a1b2c3d4`;
     }
     setInterval(updateLiveKey, 1000);
     updateLiveKey();
