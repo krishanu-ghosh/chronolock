@@ -1,0 +1,5 @@
+theme: jekyll-theme-slate
+title: ChronoLock
+description: Paranoid local security utility for Linux.
+show_downloads: true
+google_analytics:
