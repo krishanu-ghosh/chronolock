@@ -1,5 +1,27 @@
 theme: jekyll-theme-slate
 title: ChronoLock
-description: Paranoid local security utility for Linux.
-show_downloads: true
-google_analytics:
+tagline: "Paranoid local security utility for Linux"
+description: >-
+  A CLI tool that protects sensitive secrets using AES-256 encryption 
+  and time-based human-in-the-loop authentication.
+
+# 1. Feature Toggles
+show_downloads: true  # Shows "Download ZIP/TAR" buttons
+google_analytics:     # Add ID here if you have one, otherwise leave blank
+
+# 2. SEO & Social Cards (The "Magic" Part)
+# This plugin automatically generates OpenGraph tags for social sharing
+plugins:
+  - jekyll-seo-tag
+
+# 3. Author Metadata (Used by the SEO plugin)
+author:
+  name: Krishanu Ghosh
+  github: krishanu-ghosh
+  # twitter: your_handle (optional)
+
+# 4. Markdown Formatting
+# Ensures tables and code blocks in your README render exactly like GitHub
+markdown: kramdown
+kramdown:
+  input: GFM
