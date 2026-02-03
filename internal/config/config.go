@@ -50,7 +50,7 @@ func Setup(inputPath string) error {
 	}
 
 	if err := setImmutable("keys.json"); err != nil {
-		// We don't fail the whole setup, but we warn the user
+		// TODO: We don't fail the whole setup, but we warn the user, will do the refinement later.
 		fmt.Printf("Warning: Could not set elevate security (requires sudo). File is Read-Only but deletable.\nError: %v\n", err)
 	} else {
 		fmt.Println("Security: 'keys.json' has been locked.")

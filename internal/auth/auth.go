@@ -44,7 +44,6 @@ func dayToken(t time.Time) string {
 }
 
 func ValidDailySecret(input, session []byte) bool {
-	// 1. Convert to string
 	inStr := string(input)
 	sessStr := string(session)
 
