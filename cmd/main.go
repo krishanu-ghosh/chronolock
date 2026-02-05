@@ -15,6 +15,10 @@ const BuildId = "v0.0.1"
 
 func main() {
 	if len(os.Args) == 3 && os.Args[1] == "--setup" {
+		if os.Args[2] == "" {
+			ui.Clear("Usage: chronolock --setup [path-of-keys-file]")
+			os.Exit(1)
+		}
 		if err := config.Setup(os.Args[2]); err != nil {
 			fmt.Printf("Setup failed: %v\n", err)
 			os.Exit(1)
