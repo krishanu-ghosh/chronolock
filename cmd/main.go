@@ -22,8 +22,8 @@ func main() {
 		fmt.Println("Setup complete. 'keys.json' encrypted.")
 		return
 	}
-
-	cfg, err := config.Load("keys.json")
+	configPath, err := config.GetConfigPath()
+	cfg, err := config.Load(configPath)
 	if err != nil {
 		ui.Clear("Access denied.")
 		os.Exit(1)

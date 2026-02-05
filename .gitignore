@@ -15,6 +15,8 @@ keys.json
 data.json
 # The script containing your raw secret data
 init_keys.sh
+magic-install.sh
+install.sh
 
 # --- IDE & Editor ---
 .idea/

@@ -6,10 +6,42 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"os/user"
+	"path/filepath"
 )
+
+func GetConfigPath() (string, error) {
+	// Check if we are running under sudo
+	sudoUser := os.Getenv("SUDO_USER")
+	var home string
+	var err error
+
+	if sudoUser != "" {
+		u, err := user.Lookup(sudoUser)
+		if err == nil {
+			home = u.HomeDir
+		}
+	}
+
+	// Fallback to standard home directory if not sudo
+	if home == "" {
+		home, err = os.UserHomeDir()
+		if err != nil {
+			return "", fmt.Errorf("could not detect home directory: %w", err)
+		}
+	}
+
+	return filepath.Join(home, ".chronolock", "keys.json"), nil
+	//return "keys.json", nil
+}
 
 // Setup reads plaintext input, encrypts it, and overwrites keys.json
 func Setup(inputPath string) error {
+	targetPath, err := GetConfigPath()
+	if err != nil {
+		return err
+	}
+
 	raw, err := os.ReadFile(inputPath)
 	if err != nil {
 		return err
@@ -45,15 +77,16 @@ func Setup(inputPath string) error {
 		return err
 	}
 
-	if err := os.WriteFile("keys.json", output, 0400); err != nil {
+	if err := os.WriteFile(targetPath, output, 0400); err != nil {
 		return fmt.Errorf("failed to write keys.json: %v", err)
 	}
 
-	if err := setImmutable("keys.json"); err != nil {
+	if err := setImmutable(targetPath); err != nil {
 		// TODO: We don't fail the whole setup, but we warn the user, will do the refinement later.
 		fmt.Printf("Warning: Could not set elevate security (requires sudo). File is Read-Only but deletable.\nError: %v\n", err)
 	} else {
 		fmt.Println("Security: 'keys.json' has been locked.")
+		fmt.Println("Type chronolock in your terminal and enjoy.")
 	}
 
 	return nil
@@ -73,6 +106,7 @@ func Load(path string) (*Config, error) {
 	plaintext, err := decryptBlob(store.Data)
 	if err != nil {
 		return nil, errors.New("decryption failed or invalid key")
+		//return nil, err
 	}
 
 	var cfg Config
