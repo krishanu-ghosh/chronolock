@@ -23,7 +23,6 @@ func main() {
 			fmt.Printf("Setup failed: %v\n", err)
 			os.Exit(1)
 		}
-		fmt.Println("Setup complete. 'keys.json' encrypted.")
 		return
 	}
 	configPath, err := config.GetConfigPath()

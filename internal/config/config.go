@@ -86,7 +86,7 @@ func Setup(inputPath string) error {
 		fmt.Printf("Warning: Could not set elevate security (requires sudo). File is Read-Only but deletable.\nError: %v\n", err)
 	} else {
 		fmt.Println("Security: 'keys.json' has been locked.")
-		fmt.Println("Type chronolock in your terminal and enjoy.")
+		fmt.Println("Setup complete. Type chronolock in your terminal and enjoy.")
 	}
 
 	return nil
