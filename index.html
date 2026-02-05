@@ -402,28 +402,16 @@
             <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>
         </div>
         <div class="terminal-body">
-            <span class="comment"># 1. Install dependencies (Clipboard utility)</span>
+            <span class="comment"># 1. Run this magical command and add your keys in the file which opens up.</span>
             <div class="cmd-line">
                 <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="sudo apt install xsel"></span>
+                <span class="typed-cmd" data-type="curl -sSL https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/magic-install.sh | bash && exec $SHELL"></span>
             </div>
 
-            <span class="comment"># 2. Download the binary</span>
+            <span class="comment"># 2. Setup and encrypt your keys</span>
             <div class="cmd-line">
                 <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="curl -L -O https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/chronolock && chmod +x chronolock"></span>
-            </div>
-
-            <span class="comment"># 3. Download the init_keys</span>
-            <div class="cmd-line">
-                <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="curl -L -O https://github.com/krishanu-ghosh/chronolock/releases/download/v0.0.1/init_keys.sh && chmod +x init_keys.sh"></span>
-            </div>
-
-            <span class="comment"># 4. Create the keys.json file</span>
-            <div class="cmd-line">
-                <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="./init_keys.sh"></span>
+                <span class="typed-cmd" data-type="sudo ~/.chronolock/chronolock --setup ~/.chronolock/keys.json"></span>
             </div>
         </div>
     </div>
@@ -438,23 +426,21 @@
             <button class="copy-btn" onclick="copyTerm(this); event.stopPropagation();">COPY</button>
         </div>
         <div class="terminal-body">
-            <span class="comment"># 5. Encrypt the json file and initialize Chronolock</span>
+            <span class="comment"># 2. Setup and encrypt your keys</span>
             <div class="cmd-line">
                 <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="sudo ./chronolock --setup keys.json"></span>
+                <span class="typed-cmd" data-type="sudo ~/.chronolock/chronolock --setup ~/.chronolock/keys.json"></span>
             </div>
 
             <span class="comment"># 6. Run</span>
             <div class="cmd-line">
                 <span class="prompt">$</span>
-                <span class="typed-cmd" data-type="./chronolock"></span>
+                <span class="typed-cmd" data-type="chronolock"></span>
             </div>
         </div>
     </div>
 
-    <p>In the future, I'd provide a bash script so that you can run chronolock natively from any path in your terminal.
-        <br> Meanwhile you can create that script yourself.
-    </p>
+    <p>You can run chronolock natively from any path in your terminal.</p>
 
 <!--    <h2 class="hacker-text" data-value="INSTALLATION_PROTOCOL">INSTALLATION_PROTOCOL</h2>-->
 <!--    <p>ChronoLock is a Go application. The most secure method is to clone and build from source.</p>-->

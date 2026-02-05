@@ -1,1 +1,6 @@
 .idea/
+init_keys.sh
+install.sh
+magic-install.sh
+keys.json
+chronolock
